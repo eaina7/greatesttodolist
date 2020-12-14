@@ -1,42 +1,91 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Roboto", sans-serif;
 }
 
 body {
-  margin-top: 3em;
-  display: flex;
-  justify-content: center;
-  margin-bottom: 5em;
+	margin-top: 3em;
+	display: flex;
+	justify-content: center;
+	margin-bottom: 5em;
+	background-color: bisque;
 }
-
 header {
-  padding: 0 2em 1em;
-  text-align: left;
-  font-size: 2em;
-  text-shadow: 2px 2px 6px gray;
+	padding: 0 2em 1em;
+	text-align: left;
+	font-size: 2em;
+	text-shadow: 2px 2px 6px gray;
 }
 
 .content {
-  width: 70%;
-  min-width: 480px;
-  max-width: 1200px;
+	width: 70%;
+	min-width: 480px;
+	max-width: 1200px;
 }
 
 .horizontal {
-  display: flex;
-  flex-wrap: wrap;
+	display: flex;
+	flex-wrap: wrap;
 }
 
 .vertical {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
 }
 
 .cards-view {
-  justify-content: space-between;
-  margin-top: 3em;
+	justify-content: space-between;
+	margin-top: 3em;
+}
+
+.workArea {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	margin-top: 2rem;
+}
+
+.item {
+	padding: 0.5rem;
+	border-bottom: 4px solid #fff;
+	margin-bottom: 1.5rem;
+}
+
+.item_input {
+	background: none;
+	outline: none;
+	border: none;
+	color: #fff;
+	font-size: 1.4rem;
+	width: 245px;
+}
+
+.edit {
+	background: none;
+	outline: none;
+	border: none;
+	color: lime;
+	font-size: 1.4rem;
+	font-family: 'Hind', sans-serif;
+	margin: 0 0.5rem;
+	cursor: pointer;
+}
+.remove {
+	background: none;
+	outline: none;
+	border: none;
+	color: #E00;
+	font-size: 1.4rem;
+	font-family: 'Hind', sans-serif;
+    cursor: pointer;
+}
+.mytask {
+	display: flex;
+	justify-content: center;
+    align-items: center;
 }

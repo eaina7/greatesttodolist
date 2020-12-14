@@ -18,6 +18,7 @@
       src="https://kit.fontawesome.com/28d582c70e.js"
       crossorigin="anonymous"
     ></script>
+    
     <title>GreatestToDoList | How To</title>
   </head>
   <body>
@@ -28,93 +29,18 @@
         <p>... of how to make a ToDoList</p>
       </header>
       <!-- MAIN -->
-      <main class="">
-        <!-- Start ToDO FORM (input to-do tasks) -->
-        <form class="todo-form">
-          <div class="todo-form-row">
-            <div class="todo-form-column form-col-left">
-              <label for="task">Task Title</label>
-              <input
-                type="text"
-                id="form-task-title"
-                placeholder="Task Title"
-              />
-            </div>
-            <div class="todo-form-column form-col-right">
-              <label for="dueDate">Due-Date</label>
-              <input
-                type="date"
-                id="form-task-duedate"
-                placeholder="Due Date"
-              />
-            </div>
-          </div>
-          <div class="todo-form-row">
-            <div class="todo-form-column form-col-left">
-              <label for="description">Description</label>
-              <textarea
-                id="form-task-description"
-                placeholder="Description"
-                rows="3"
-              ></textarea>
-            </div>
-            <div class="todo-form-column form-col-right form-button-position">
-              <button id="form-submit" class="button-add-task">Add Task</button>
-            </div>
-          </div>
-        </form>
-        <!-- END ToDO FORM -->
-        <!-- SECTION-1 (to-do-cards) -->
-        <section class="horizontal cards-view">
-          <div class="task-container horizontal">
-            <div class="task-card task-todo">
-              <div class="task-content vertical">
-                <h2 class="task-title">Task title</h2>
-                <p class="task-description">
-                  This is the description of this task
-                </p>
-                <p class="task-duedate">2020/12/08</p>
-                <div class="horizontal task-controls task-controls-todo">
-                  <a href="#" class="task-delete">
-                    <i class="fas fa-trash-alt"></i>
-                  </a>
-                  <a href="#" class="task-edit">
-                    <i class="fas fa-edit"></i>
-                  </a>
-                  <a href="#" class="task-complete">
-                    <i class="fas fa-check"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="task-container horizontal">
-            <div class="task-card task-done">
-              <div class="task-content vertical">
-                <h2 class="task-title">Task title</h2>
-                <p class="task-description">
-                  This is the description of this task
-                </p>
-                <p class="task-duedate">2020/12/08</p>
-                <div class="horizontal task-controls task-controls-done">
-                  <a href="#" class="task-delete">
-                    <i class="fas fa-trash-alt"></i>
-                  </a>
-                  <a href="#" class="task-edit">
-                    <i class="fas fa-edit"></i>
-                  </a>
-                  <a href="#" class="task-uncomplete">
-                    <i class="fas fa-times"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <!-- END SECTION-1 -->
-      </main>
-      <!-- FOOTER -->
-      <footer class=""></footer>
-    </div>
-  </body>
+    <div class="mytask">
+        <input type="text" class="input" placeholder="What are your tasks today?">
+        <button class="insert"><i class="fas fa-plus"></i></button>
+   </div>
+   <div class="workArea">
+     <div class = "item">
+      <input type="text" class="item_input">
+      <button class="editbutton">EDIT</button>
+      <button class="removebutton">Remove</button>
+   </div>
+   <script src="./public/app/index.js"> </script>
+   </body>
 </html>
+
+       
