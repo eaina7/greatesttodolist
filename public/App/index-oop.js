@@ -3,7 +3,8 @@ import Task from "./models/Task.js";
 import TaskList from "./models/TaskList.js";
 
 // ### Event-Handler: Add a new Task
-const taskList1 = new TaskList();
+const taskList = new TaskList();
+
 document
   .querySelector(".button-add-task")
   .addEventListener("click", addTodoCard); // execute funtion addToDoCard
@@ -29,7 +30,7 @@ function addTodoCard(event) {
 
     // Add new task to be displayed on todoList
     // with TaskList method addTaskToList, that creates a card calling 'createTodoCard':
-    taskList1.addTaskToTaskList(task);
+    taskList.addTaskToTaskList(task);
 
     // CLEAR Form Input.Values
     TaskList.clearForm();
@@ -38,3 +39,4 @@ function addTodoCard(event) {
 
 // sb-todo:
 // intercept dummy clicking causing multiple alerts
+// Removing a task 

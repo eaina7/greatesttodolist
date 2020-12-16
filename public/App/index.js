@@ -25,6 +25,7 @@ doneList.addEventListener("click", deleteCheckEdit); // important for actions on
 // Grab specific item we are clicking on --> execute function based on targeted clickItem
 function deleteCheckEdit(e) {
   const clickItem = e.target;
+  // console.log(clickItem);
   const taskChoosen = clickItem.parentElement.parentElement.parentElement;
   // console.log(e.target); // test if listens on differnt clicks to whole container
 
