@@ -3,7 +3,8 @@ import Task from "./models/Task.js";
 import TaskList from "./models/TaskList.js";
 
 // ### Event-Handler: Add a new Task
-const taskList1 = new TaskList();
+// Instantiate a TaskList object (takes care of adding task to the list containers)
+const taskList = new TaskList();
 document
   .querySelector(".button-add-task")
   .addEventListener("click", addTodoCard); // execute funtion addToDoCard
@@ -22,17 +23,17 @@ function addTodoCard(event) {
   // prevent form from submitting when fields are empty:
   if (title === "" || description === "" || dueDate === "") {
     const message = "Please add information to all fields.";
-    TaskList.displayCustomAlert(message, "alert-empty-fields"); //pass message and class of alertType based on event
+    taskList.displayCustomAlert(message, "alert-empty-fields"); //pass message and class of alertType based on event
   } else {
     const message = "New task added to list.";
-    TaskList.displayCustomAlert(message, "alert-success");
+    taskList.displayCustomAlert(message, "alert-success");
 
     // Add new task to be displayed on todoList
     // with TaskList method addTaskToList, that creates a card calling 'createTodoCard':
-    taskList1.addTaskToTaskList(task);
+    taskList.addTaskToTaskList(task);
 
     // CLEAR Form Input.Values
-    TaskList.clearForm();
+    taskList.clearForm();
   }
 }
 
