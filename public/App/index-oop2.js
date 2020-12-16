@@ -54,6 +54,14 @@ const removeTask = (event) => {
   todoCard.remove();
 }
 
+// checking/unchecking tasks
+const checkTaskDone = (event) => {
+  const todoCard = event.target.closest(".task-card");
+  const taskID = todoCard.id;
+  
+}
+
+
 
 export default removeTask;
 

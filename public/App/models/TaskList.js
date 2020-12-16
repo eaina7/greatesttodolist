@@ -3,27 +3,28 @@ import createTodoCard from '../functions.js';
 
 // ### Class TaskList: display / remove / edit task on a list or showing alerts etc.
 export default class TaskList {
+  
+  // Instantiates an instance of TaskList with an empty array
   constructor() {
     this.list = [];
   }
 
-  // TAKE the whole DIV.TASK-CARD created in function 'createTodoCard' and
-  // APPEND (paste) it to the actual div.task-container (see index.html) for 'todoList' or 'doneList':
+  // Adds an intance of Task in a taskList
   addTaskToTaskList(task) {
     const lastID = this.list.length === 0 ? 0 : this.list[this.list.length - 1].id;
     task.id = lastID + 1;
     this.list.push(task);
-    this.addTaskToList(task);
   }
 
-  // Method - Add Task Card to List |
-  // Task Card (html) is dynamically created by function 'createToDoCard' and then appended to toDoList
-  addTaskToList(task) {
-    const todoList = document.querySelector(".task-container"); // grab todoList Container from the DOM
-    todoList.appendChild(
-      createTodoCard(task._title, task._description, task._dueDate, task.id)
-    ); // todoList.appendChild(todoDiv);
+  // Removes an intance of Task in a taskList
+  removeTask(taskID) {
+    const neededTaskIndex = this.list.findIndex(task => task.id === +taskID);
+    this.list.splice(neededTaskIndex,1);
   }
+
+
+  //-- Montaser up --//
+  //-----------------//
 
   // Method - Display alert to prevent from submitting empty form
   displayCustomAlert(message, alertType) {
@@ -44,19 +45,5 @@ export default class TaskList {
     setTimeout(function () {
       document.querySelector(".custom-alert").remove();
     }, 2000);
-  }
-
-  // Method - Clear Form
-  clearForm() {
-    // note: passing as variables did not work --> select items directly works:
-    document.querySelector("#form-task-title").value = "";
-    document.querySelector("#form-task-description").value = "";
-    document.querySelector("#form-task-duedate").value = "";
-  }
-
-  // Method remove TASK
-  removeTask(taskID) {
-    const task = this.list.find((task) => { task.id === taskID });
-    console.log(task);
   }
 }
