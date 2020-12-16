@@ -1,4 +1,5 @@
 // # C L A S S E S
+import createTodoCard from '../functions.js';
 
 // ### Class TaskList: display / remove / edit task on a list or showing alerts etc.
 export default class TaskList {
@@ -9,9 +10,10 @@ export default class TaskList {
   // TAKE the whole DIV.TASK-CARD created in function 'createTodoCard' and
   // APPEND (paste) it to the actual div.task-container (see index.html) for 'todoList' or 'doneList':
   addTaskToTaskList(task) {
+    const lastID = this.list.length === 0 ? 0 : this.list[this.list.length - 1].id;
+    task.id = lastID + 1;
     this.list.push(task);
     this.addTaskToList(task);
-    console.log(this.list);
   }
 
   // Method - Add Task Card to List |
@@ -19,7 +21,7 @@ export default class TaskList {
   addTaskToList(task) {
     const todoList = document.querySelector(".task-container"); // grab todoList Container from the DOM
     todoList.appendChild(
-      createTodoCard(task._title, task._description, task._dueDate)
+      createTodoCard(task._title, task._description, task._dueDate, task.id)
     ); // todoList.appendChild(todoDiv);
   }
 
@@ -50,5 +52,11 @@ export default class TaskList {
     document.querySelector("#form-task-title").value = "";
     document.querySelector("#form-task-description").value = "";
     document.querySelector("#form-task-duedate").value = "";
+  }
+
+  // Method remove TASK
+  removeTask(taskID) {
+    const task = this.list.find((task) => { task.id === taskID });
+    console.log(task);
   }
 }

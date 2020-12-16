@@ -3,11 +3,14 @@ import Task from "./models/Task.js";
 import TaskList from "./models/TaskList.js";
 
 // ### Event-Handler: Add a new Task
+
 // Instantiate a TaskList object (takes care of adding task to the list containers)
 const taskList = new TaskList();
 document
   .querySelector(".button-add-task")
   .addEventListener("click", addTodoCard); // execute funtion addToDoCard
+
+
 
 function addTodoCard(event) {
   event.preventDefault(); // prevent from submitting/reload
@@ -37,5 +40,23 @@ function addTodoCard(event) {
   }
 }
 
+// removing a task  
+
+const removeTaskFromTaskList = (taskId) => {
+  const neededTaskIndex = taskList.list.findIndex(task => task.id === +taskId);
+  taskList.list.splice(neededTaskIndex,1);
+}
+
+const removeTask = (event) => {
+  const todoCard = event.target.closest(".task-card");
+  const taskID = todoCard.id;
+  removeTaskFromTaskList(taskID);
+  todoCard.remove();
+}
+
+
+export default removeTask;
+
 // sb-todo:
 // intercept dummy clicking causing multiple alerts
+// Removing a task 

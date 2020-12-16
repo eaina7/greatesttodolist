@@ -1,10 +1,12 @@
+import removeTask from './index-oop.js'
 // This function CREATES a task Card,
 // that can be appended to a list (task-container) for done/undone tasks
-function createTodoCard(title, description, dueDate) {
+const createTodoCard = (title, description, dueDate, id, taskList) => {
   // = < CREATE main DIV.TASK-CARD+task-todo in the div.task-container
   const todoDiv = document.createElement("div");
   todoDiv.classList.add("task-card"); // add class to div
-  todoDiv.classList.add("task-todo"); // -- " --
+  todoDiv.classList.add("task-todo");
+  todoDiv.id = id; // -- " --
 
   // --- < 1st inner div of div.task-card:
   // = < < CREATE inner div.task-content+vertical that is inside div.task-card
@@ -65,6 +67,7 @@ function createTodoCard(title, description, dueDate) {
   trashBtn.href = "#delete";
   trashBtn.classList.add("task-delete");
   trashBtn.innerHTML = '<i class="fas fa-trash-alt"></i>';
+  trashBtn.addEventListener("click", removeTask)
   newTodoControls.appendChild(trashBtn); // append to Controls div
   // = < < < < CREATE button a.task-EDIT
   const editBtn = document.createElement("a");
@@ -80,3 +83,5 @@ function createTodoCard(title, description, dueDate) {
   newTodoControls.appendChild(completeBtn);
   return todoDiv;
 }
+
+export default createTodoCard;
