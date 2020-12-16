@@ -1,4 +1,4 @@
-import removeTask from './removeCard.js'
+import removeTask from './index-oop.js'
 // This function CREATES a task Card,
 // that can be appended to a list (task-container) for done/undone tasks
 const createTodoCard = (title, description, dueDate, id, taskList) => {

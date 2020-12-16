@@ -9,6 +9,8 @@ document
   .querySelector(".button-add-task")
   .addEventListener("click", addTodoCard); // execute funtion addToDoCard
 
+
+
 function addTodoCard(event) {
   event.preventDefault(); // prevent from submitting/reload
 
@@ -36,6 +38,23 @@ function addTodoCard(event) {
     TaskList.clearForm();
   }
 }
+
+// removing a task  
+
+const removeTaskFromTaskList = (taskId) => {
+  const neededTaskIndex = taskList.list.findIndex(task => task.id === +taskId);
+  taskList.list.splice(neededTaskIndex,1);
+}
+
+const removeTask = (event) => {
+  const todoCard = event.target.closest(".task-card");
+  const taskID = todoCard.id;
+  removeTaskFromTaskList(taskID);
+  todoCard.remove();
+}
+
+
+export default removeTask;
 
 // sb-todo:
 // intercept dummy clicking causing multiple alerts
