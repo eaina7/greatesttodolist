@@ -42,6 +42,7 @@ const renderTask = (task) => {
 // -------- Removing a task -------- //
 // Removes task from the Container and from the taskList
 const removeTask = (event) => {
+    event.preventDefault();
     // Selects the whole care where the remove button is clicked 
     const taskCard = event.target.closest(".task-card");
     // Get the task ID 
@@ -55,6 +56,7 @@ const removeTask = (event) => {
 // -------- Checking / Unchecking a task -------- //
 
 const moveCard = (event) => {
+    event.preventDefault();
     // Selects the whole card we want to mark as read/unread 
     const taskCard = event.target.closest(".task-card");
     // Get the task ID 
