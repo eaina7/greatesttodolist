@@ -28,16 +28,23 @@ const createTask = (event) => {
     renderTask(task);
 }
 
+// Renders the HTML Card component inside the Tasks Container
 const renderTask = (task) => {
-    todoList.appendChild(
-      createTodoCard(task._title, task._description, task._dueDate, task.id)
-    );
+    // Creates the task card
+    const taskCard = createTodoCard(task._title, task._description, task._dueDate, task.id);
+    // Appends the task card in the container 
+    todoList.appendChild(taskCard);
 }
 
+// Removes task from the Container and from the taskList
 const removeTask = (event) => {
+    // Selects the whole care where the remove button is clicked 
     const taskCard = event.target.closest(".task-card");
+    // Get the task ID 
     const taskID = taskCard.id;
+    // Removes the task from taskList
     taskList.removeTask(taskID);
+    // Removes task from DOM
     taskCard.remove();
 }
 
