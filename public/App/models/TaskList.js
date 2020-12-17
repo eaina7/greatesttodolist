@@ -22,28 +22,20 @@ export default class TaskList {
     this.list.splice(neededTaskIndex,1);
   }
 
+  // Find task by taskId
+  findTask(taskId) {
+    const neededTaskIndex = this.list.findIndex(task => task.id === +taskId);
+    return this.list[neededTaskIndex];
+  }
 
-  //-- Montaser up --//
-  //-----------------//
-
-  // Method - Display alert to prevent from submitting empty form
-  displayCustomAlert(message, alertType) {
-    // construct alert element, create div
-    const div = document.createElement("div");
-    // Add class to style alert
-    div.classList.add("custom-alert", alertType);
-    div.innerText = message; // Add alert text passed by event clicked
-
-    // Select parent and where to display the customAlert
-    const mainContainer = document.querySelector("main");
-    const form = document.querySelector("#todo-form");
-    // display alert IN main BEFORE the form
-    // insertBefore takes 2 params: (what to insert (div), before what (form))
-    mainContainer.insertBefore(div, form);
-
-    // setTimeout for alert to disappear
-    setTimeout(function () {
-      document.querySelector(".custom-alert").remove();
-    }, 2000);
+  // Marks task as done
+  markTaskDone(taskID) {
+    const task = this.findTask(taskID);
+    task.markAsDone();
+  }
+  // Marks task as Undone
+  markTaskUnDone(taskID) {
+    const task = this.findTask(taskID);
+    task.markAsUndone();
   }
 }
