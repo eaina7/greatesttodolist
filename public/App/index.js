@@ -176,6 +176,30 @@ function addTodoCard(event) {
   todoInputDue.value = "";
 }
 
+  //----- ALERTS ----//
+  //-----------------//
+
+  // Method - Display alert to prevent from submitting empty form
+  const displayCustomAlert = (message, alertType) => {
+    // construct alert element, create div
+    const div = document.createElement("div");
+    // Add class to style alert
+    div.classList.add("custom-alert", alertType);
+    div.innerText = message; // Add alert text passed by event clicked
+
+    // Select parent and where to display the customAlert
+    const mainContainer = document.querySelector("main");
+    const form = document.querySelector("#todo-form");
+    // display alert IN main BEFORE the form
+    // insertBefore takes 2 params: (what to insert (div), before what (form))
+    mainContainer.insertBefore(div, form);
+
+    // setTimeout for alert to disappear
+    setTimeout(function () {
+      document.querySelector(".custom-alert").remove();
+    }, 2000);
+  }
+
 // optional ToDo:
 // * Add data storage
 // * OutSource Functions

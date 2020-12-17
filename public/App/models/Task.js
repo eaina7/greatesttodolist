@@ -14,4 +14,8 @@ export default class Task {
   markAsDone() {
     this._done = true;
   }
+
+  markAsUndone() {
+    this._done = false;
+  }
 }

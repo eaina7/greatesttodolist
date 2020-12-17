@@ -1,4 +1,4 @@
-import removeTask from './index-oop.js'
+import { removeTask, moveCard } from './indexOOP.js';
 // This function CREATES a task Card,
 // that can be appended to a list (task-container) for done/undone tasks
 const createTodoCard = (title, description, dueDate, id, taskList) => {
@@ -80,6 +80,7 @@ const createTodoCard = (title, description, dueDate, id, taskList) => {
   completeBtn.href = "#complete";
   completeBtn.classList.add("task-complete");
   completeBtn.innerHTML = '<i class="fas fa-check"></i>';
+  completeBtn.addEventListener("click", moveCard);
   newTodoControls.appendChild(completeBtn);
   return todoDiv;
 }
