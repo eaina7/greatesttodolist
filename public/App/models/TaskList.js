@@ -38,7 +38,6 @@ export default class TaskList {
       window.localStorage.getItem("task" + taskID)
     );
     localStorageObject._done = true;
-    console.log(localStorageObject);
     localStorage.setItem("task" + taskID, JSON.stringify(localStorageObject));
   }
   // Marks task as Undone
