@@ -64,20 +64,20 @@ const createTodoCard = (title, description, dueDate, id, taskList) => {
   // ------- < CREATE 3 inner elements of task-controls:
   // = < < < < CREATE button a.task-DELETE
   const trashBtn = document.createElement("a");
-  trashBtn.href = "#delete";
+  trashBtn.href = "";
   trashBtn.classList.add("task-delete");
   trashBtn.innerHTML = '<i class="fas fa-trash-alt"></i>';
   trashBtn.addEventListener("click", removeTask);
   newTodoControls.appendChild(trashBtn); // append to Controls div
   // = < < < < CREATE button a.task-EDIT
   const editBtn = document.createElement("a");
-  editBtn.href = "#edit";
+  editBtn.href = "";
   editBtn.classList.add("task-edit");
   editBtn.innerHTML = '<i class="fas fa-edit"></i>';
   newTodoControls.appendChild(editBtn);
   // = < < < < CREATE button a.task-COMPLETE
   const completeBtn = document.createElement("a");
-  completeBtn.href = "#complete";
+  completeBtn.href = "";
   completeBtn.classList.add("task-complete");
   completeBtn.innerHTML = '<i class="fas fa-check"></i>';
   completeBtn.addEventListener("click", moveCard);
