@@ -43,8 +43,9 @@ const renderTask = (task) => {
   );
   // Appends the task card in the container
   if (task._done === true) {
+    const clickItem = taskCard.children[0].children[6].children[2];
+    flipCardDesign(taskCard, clickItem);
     doneList.appendChild(taskCard);
-    taskCard.classList.toggle("task-done");
   } else {
     todoList.appendChild(taskCard);
   }
@@ -85,9 +86,10 @@ const flipCardDesign = (taskCard, clickItem) => {
   taskCard.classList.toggle("task-done");
   clickItem.firstChild.classList.toggle("fa-times");
   clickItem.parentElement.classList.toggle("task-controls-done");
+  console.log(taskList.list);
 };
 
-// -------- Get items from local storage -------- //
+// -------- Get objects from local storage -------- //
 const getItemsFromLocalStorage = () => {
   for (let i = 0; i < localStorage.length; i++) {
     taskList.list.push(JSON.parse(localStorage.getItem(localStorage.key(i))));
